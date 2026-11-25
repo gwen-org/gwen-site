@@ -1,5 +1,5 @@
 /**
- * Puxa da release mais recente do gwen-app o que o site mostra:
+ * Puxa da release mais recente do gwen (repositório público de Releases) o que o site mostra:
  * versão, link e tamanho do instalador, a lista de versões com as notas,
  * quantas vezes cada instalador foi baixado e as estrelas do repositório.
  *
@@ -10,7 +10,7 @@
  */
 import { writeFile, mkdir, readFile } from 'node:fs/promises'
 
-const REPO = 'SamaraSilvia81/gwen-app'
+const REPO = 'gwen-org/gwen'
 const OUT = new URL('../src/generated/releases.json', import.meta.url)
 const headers = { Accept: 'application/vnd.github+json', 'User-Agent': 'gwen-site' }
 if (process.env.GITHUB_TOKEN) headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`

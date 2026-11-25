@@ -27,7 +27,7 @@
 
 Este é o site da **G.W.E.N.** (*Gestão de Wellness, Eficiência e Navegação*), o assistente desktop que abre o ambiente de cada projeto com um clique, conta o tempo de cada um e trata a pausa como parte do trabalho.
 
-O app mora no repositório [**gwen-app**](https://github.com/SamaraSilvia81/gwen-app). Aqui fica só o site: a landing que apresenta a G.W.E.N. e a página de novidades. O site não guarda cópia da versão do app. Ele lê as releases do `gwen-app`, então cada versão nova aparece sozinha.
+O código do app fica no repositório privado `gwen-app`. As versões publicadas ficam no repositório público [**gwen**](https://github.com/gwen-org/gwen). Aqui fica só o site: a landing que apresenta a G.W.E.N. e a página de novidades. O site não guarda cópia da versão do app. Ele lê as releases do `gwen`, então cada versão nova aparece sozinha.
 
 > Os prints do site usam dados fictícios e temas de usuário. A identidade do sistema é Noir; a cor entra só pelas telas do app.
 
@@ -63,9 +63,9 @@ A landing conta uma história, do problema até o download:
 
 | Onde | O que acontece |
 |---|---|
-| **No build** | `scripts/fetch-release.mjs` roda antes do `vite build` e grava `src/generated/releases.json` com as releases publicadas do [gwen-app](https://github.com/SamaraSilvia81/gwen-app/releases): versão, data, notas, link e tamanho do instalador. Sem rede, o arquivo anterior continua valendo |
+| **No build** | `scripts/fetch-release.mjs` roda antes do `vite build` e grava `src/generated/releases.json` com as releases publicadas do [gwen](https://github.com/gwen-org/gwen/releases): versão, data, notas, link e tamanho do instalador. Sem rede, o arquivo anterior continua valendo |
 | **No navegador** | `src/lib/release.js` começa com esse arquivo e confere a API do GitHub ao abrir a página. Se saiu versão depois do último deploy, o site já mostra a nova |
-| **Ao publicar uma release** | o workflow `notify-site.yml` do gwen-app chama o Deploy Hook da Vercel, que refaz o build com as notas novas |
+| **Ao publicar uma release** | o workflow `notify-site.yml` do repositório gwen chama o Deploy Hook da Vercel, que refaz o build com as notas novas |
 
 Atualiza sozinho: o selo da versão, os botões de baixar, o tamanho do instalador e a página **`/novidades`**, que lista cada versão com as notas da release.
 
@@ -84,8 +84,10 @@ No dev, o seletor **hero A B C** aparece no canto. No site publicado ele some; p
 
 1. Na Vercel, importe este repositório. Framework: Vite. Build: `yarn build`. Output: `dist`.
 2. Em **Settings > Git > Deploy Hooks**, crie um hook para a branch `main` e copie a URL.
-3. No gwen-app, cadastre a URL como secret: `gh secret set VERCEL_DEPLOY_HOOK -R SamaraSilvia81/gwen-app`.
-4. Copie `extras/notify-site.yml` para `.github/workflows/` do gwen-app.
+3. No repositório gwen, cadastre a URL como secret: `gh secret set VERCEL_DEPLOY_HOOK -R gwen-org/gwen`. O comando pergunta o valor, não o escreva na linha.
+4. Copie `extras/notify-site.yml` para `.github/workflows/` do gwen.
+
+O passo a passo completo de uma versão (token, hook, conferências) está no `OPS-001`, na documentação do repositório do app.
 
 ### $ estrutura
 
@@ -101,7 +103,7 @@ src/
   generated/         releases.json, gerado no build
 public/prints/       telas do app com dados fictícios, em vários temas
 scripts/             fetch-release.mjs
-extras/              notify-site.yml, para o gwen-app
+extras/              notify-site.yml, para o repositório gwen
 _assets/             prints e banners deste README
 ```
 
@@ -118,7 +120,7 @@ Qualquer outro uso precisa ser combinado antes com a autora ([@devs_sam](https:/
 
 *Uma sessão de cada vez. Uma pausa de cada vez.*
 
-Feito por [Samara Silvia](https://github.com/SamaraSilvia81) · [@devs_sam](https://instagram.com/devs_sam) · App em [gwen-app](https://github.com/SamaraSilvia81/gwen-app)
+Feito por [Samara Silvia](https://github.com/SamaraSilvia81) · [@devs_sam](https://instagram.com/devs_sam) · Versões em [gwen](https://github.com/gwen-org/gwen)
 
 </div>
 

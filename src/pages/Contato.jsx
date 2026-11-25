@@ -58,7 +58,7 @@ export default function Contato({ release }) {
             <p>Sugestão, problema, dúvida ou um relato de como você usa. Quem responde é quem faz a G.W.E.N.</p>
             <ul className="contact-ways">
               <li><i className="ph ph-envelope-simple"></i><span><b>Pelo formulário</b><small>resposta em até alguns dias, no e-mail que você deixar</small></span></li>
-              <li><a href="https://github.com/SamaraSilvia81/gwen-app/issues" target="_blank" rel="noopener"><i className="ph ph-github-logo"></i><span><b>Issues no GitHub</b><small>para problemas que outras pessoas também podem ter</small></span><i className="ph ph-arrow-up-right go"></i></a></li>
+              <li><a href="https://github.com/gwen-org/gwen/issues" target="_blank" rel="noopener"><i className="ph ph-github-logo"></i><span><b>Issues no GitHub</b><small>para problemas que outras pessoas também podem ter</small></span><i className="ph ph-arrow-up-right go"></i></a></li>
               <li className="off"><i className="ph ph-discord-logo"></i><span><b>Discord</b><small>a comunidade abre junto com o lançamento público</small></span></li>
             </ul>
           </div>

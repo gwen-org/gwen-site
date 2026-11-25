@@ -9,7 +9,7 @@ export default function Footer({ release }) {
         <p>Gestão de Wellness, Eficiência e Navegação. Um produto de Samara Silvia Sabino, feito em Recife.</p>
       </div>
       <div><h6>produto</h6><ul><li><a href="/#como-usar">Como usar</a></li><li><a href="/#recursos">Recursos</a></li><li><a href="/#planos">Planos</a></li><li><a href="/#duvidas">Dúvidas</a></li></ul></div>
-      <div><h6>versões</h6><ul><li><a href="https://github.com/SamaraSilvia81/gwen-app/releases" target="_blank" rel="noopener">Releases</a></li><li><a href="/novidades">Novidades</a></li></ul></div>
+      <div><h6>versões</h6><ul><li><a href="https://github.com/gwen-org/gwen/releases" target="_blank" rel="noopener">Releases</a></li><li><a href="/novidades">Novidades</a></li></ul></div>
       <div><h6>sobre</h6><ul><li><a href="/historia">História</a></li><li><a href="/#" title="Página em breve">Privacidade e termos</a></li><li><a href="/contato">Contato</a></li><li><a href="/#" aria-disabled="true">Discord (em breve)</a></li></ul></div>
     </div>
     <div className="giant" aria-hidden="true">G.W.E.N.</div>
